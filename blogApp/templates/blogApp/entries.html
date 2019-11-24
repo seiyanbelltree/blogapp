@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'CSS/blog.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blogApp/CSS/blog.css' %}">
 
     <title>文系エンジニア道 {{ Article.title }}</title>
   </head>
@@ -20,7 +20,7 @@
 
       <header class="bg-primary row align-items-center">
         <div class="blogLogo col-sm-4">
-        <h1><a href="{% url 'blogApp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static "img/icon.png" %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
+        <h1><a href="{% url 'blogApp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static "blogApp/img/icon.png" %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
         </div>
         <div class="itemLine col-sm-5">
           <ul class = "nav">
