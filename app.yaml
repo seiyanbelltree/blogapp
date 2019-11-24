@@ -1,5 +1,5 @@
 runtime: python37
-service: DjangoBlog
+service: django_blog
 
 handlers:
   - url: /.*
