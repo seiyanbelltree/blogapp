@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>インデックスだよ</h1>
+
+{% for test in testSet %}
+    <div>
+        <p><a href="{% url 'testApp:testArticle' tN=test.testNumber %}">{{ test.testNumber }}番目の記事を読む</a></p>
+        <h2>{{ test.text|linebreaksbr }}</h2>
+    </div>
+{% endfor %}
+
+
+</body>
+</html>
