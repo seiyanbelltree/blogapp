@@ -1,0 +1,9 @@
+runtime:python37
+service: DjangoBlog
+
+handlers:
+  - url: /.*
+    script: auto
+
+  - url: /static
+    static_dir: static/
