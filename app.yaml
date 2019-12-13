@@ -3,8 +3,8 @@ service: django-blog
 entrypoint: gunicorn -b :$PORT blogProject.wsgi:application
 
 handlers:
-  - url: /static
-    static_dir: deploy/
-
   - url: /.*
     script: auto
+
+  - url: /static
+    static_dir: deploy/
