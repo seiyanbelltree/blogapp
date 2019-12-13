@@ -25,7 +25,7 @@
         <div class="itemLine col-sm-5">
           <ul class = "nav">
             <li class ="nav-item"><a href="{% url 'blogApp:home' %}" class = "nav-link text-white">Home</a></li>
-            <li class ="nav-item"><a href="#" class = "nav-link text-white">webアプリ制作日誌</a></li>
+            <li class ="nav-item"><a href="{% url 'blogApp:index' %}" class = "nav-link text-white">webアプリ制作日誌</a></li>
             <li class ="nav-item"><a href="#" class = "nav-link text-white">webアプリケーション</a></li>
           </ul>
         </div>
@@ -38,23 +38,19 @@
       </header>
       <div class="content row">
         <div class="maincontent  col-12 col-sm-9 px-0">
-          <p style ="font-size:40px;">【投稿記事一覧】</p>
+          <p style ="font-size:40px;">【記事一覧】</p>
           <div class="testspace mt-4">
 
           <div class="sameTag">
-            <div class="card-group">
               {% for entry in allList%}
-                <div class="card" style="width:80%; background-color:transparent;border:1px solid black;">
-                  <a href="{% url 'blogApp:entries' aN=entry.articleNumber %}">
-                  <img src="{{ entry.image.url }}" alt="サムネ画像" class="card-img" style = "opacity:0.4";>
-                  <div class="card-img-overlay">
-                    <h5>{{ entry.title}}</h5>
-                    <p>{{ entry.published_date }}</p>
-                  </div>
+                <ul class= "list-unstyled">
+                  <li><a href="{% url 'blogApp:entries' aN=entry.articleNumber %}">
+                  <img src="{{ entry.image.url }}" alt="サムネ画像" style="width:8%;">{{ entry.title}}<br>{{ entry.published_date }}
                   </a>
-                </div>
+                  </li>
+                </ul>
+                <br>
               {% endfor %}
-            </div>
 
           </div>
 

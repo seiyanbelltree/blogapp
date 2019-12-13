@@ -12,6 +12,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <title>文系エンジニア道</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
   </head>
   <body>
     <div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"></script>
@@ -20,7 +21,7 @@
 
       <header class="bg-primary row align-items-center">
         <div class="blogLogo col-sm-4">
-        <h1><a href="{% url 'blogApp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static "img/icon.png" %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
+        <h1><a href="{% url 'blogApp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static 'img/icon.png' %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
         </div>
         <div class="itemLine col-sm-5">
           <ul class = "nav">
@@ -60,7 +61,7 @@
                  <div class="carousel-item active"><a href="{% url 'blogApp:entries' aN=linkArticle.articleNumber %}">
                   <img src="{{ linkArticle.image.url }}" class = "d-block w-100 carouselimg" alt="おすすめ記事{{ forloop.counter }}">
                   <div class="carousel-caption d-none d-sm-block">
-                   <p class ="carouselarticle">{{ forloop.counter }}{{ linkArticle.title }}</p>
+                   <p class ="carouselarticle">{{ forloop.counter }} {{ linkArticle.title }}</p>
                   </div>
                   </a>
                  </div>
@@ -68,7 +69,7 @@
                  <div class="carousel-item"><a href="{% url 'blogApp:entries' aN=linkArticle.articleNumber %}">
                   <img src="{{ linkArticle.image.url }}" class = "d-block w-100 carouselimg" alt="おすすめ記事{{ forloop.counter }}">
                   <div class="carousel-caption d-none d-sm-block">
-                   <p class ="carouselarticle">{{ forloop.counter }}{{ linkArticle.title }}</p>
+                   <p class ="carouselarticle">{{ forloop.counter }} {{ linkArticle.title }}</p>
                   </div>
                   </a>
                  </div>
