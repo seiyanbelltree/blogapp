@@ -1,5 +1,5 @@
 runtime: python37
-service: django-blog
+service: default
 entrypoint: gunicorn -b :$PORT blogProject.wsgi:application
 
 handlers:
