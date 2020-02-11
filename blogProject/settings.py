@@ -123,10 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, "static")
-#]
+STATIC_ROOT = os.path.join(BASE_DIR, 'deploy')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -136,12 +136,6 @@ import dj_database_url
 DATABASES['default'] = dj_database_url.config()
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-ALLOWED_HOSTS = ['*']
-
-STATIC_ROOT = 'staticfiles'
-
-DEBUG = False
 
 try:
     from .local_settings import *
