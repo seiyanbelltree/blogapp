@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'CSS/blog.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blogApp/CSS/blog.css' %}">
 
     <title>文系エンジニア道</title>
   </head>
@@ -20,7 +20,7 @@
 
       <header class="bg-primary row align-items-center">
         <div class="blogLogo col-sm-4">
-        <h1><a href="{% url 'blogApp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static "img/icon.png" %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
+        <h1><a href="{% url 'blogApp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static 'blogApp/img/icon.png' %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
         </div>
         <div class="itemLine col-sm-5">
           <ul class = "nav">
@@ -45,7 +45,7 @@
               {% for entry in allList%}
                 <ul class= "list-unstyled">
                   <li><a href="{% url 'blogApp:entries' aN=entry.articleNumber %}">
-                  <img src="{{ entry.image.url }}" alt="サムネ画像" style="width:8%;">{{ entry.title}}<br>{{ entry.published_date }}
+                  <img src="{% static entry.image.url %}" alt="サムネ画像" style="width:8%;">{{ entry.title}}<br>{{ entry.published_date }}
                   </a>
                   </li>
                 </ul>
@@ -93,7 +93,7 @@
           <div class="rounded bg-primary p-1 pt-3 pt-0">
             <p class="text-white">自己紹介</p>
           </div>
-          <p>社会人3年目の文系サラリーマンです</p>
+          <p>社会人4年目の文系サラリーマンです</p>
           <p>フルスタック目指して頑張ってます</p>
           <p>生暖かく見守っていただければ幸いです <br> ぜひ一緒に頑張りましょう</p>
           <div class="rounded bg-primary p-1 pt-3 pt-0">
@@ -101,7 +101,7 @@
           </div>
             {% for entry in latestList|slice:":3" %}
               <ul class= "list-unstyled">
- 		        <li><a href="{% url 'blogApp:entries' aN=entry.articleNumber %}"><img src="{{ entry.image.url }}" alt="" style="width:25%;">{{ entry.title }}{{ entry.published_date }}</a></li>
+ 		        <li><a href="{% url 'blogApp:entries' aN=entry.articleNumber %}"><img src="{% static entry.image.url %}" alt="" style="width:25%;">{{ entry.title }}{{ entry.published_date }}</a></li>
               </ul>
             {% endfor %}
         </div>
