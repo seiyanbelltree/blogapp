@@ -2,7 +2,6 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-import Django
 import pymysql
 pymysql.install_as_MySQLdb()
 
