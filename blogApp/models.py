@@ -13,9 +13,6 @@ class Image(models.Model):
     image = models.ImageField(upload_to='photos')
     path = models.CharField(max_length=200, null=True)
 
-
-
-
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -61,7 +58,7 @@ class entryModel(models.Model):
         if self.image and hasattr(self.image, "url"):
             return self.image.url
         else:
-            return "/static/img/thumb.png"
+            return "/static/blogApp/img/pythonLogo.png"
 
     def __str__(self):
         return self.title

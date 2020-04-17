@@ -1,15 +1,15 @@
-{% load static %}
 <!doctype html>
 <html lang="ja">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'blogApp/CSS/blog.css' %}">
+    {% load static %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'blogApp/CSS/blog.css' %}">
 
     <title>文系エンジニア道</title>
     <link rel="shortcut icon" href="{% static 'blogApp/img/favicon.ico' %}">
@@ -17,7 +17,7 @@
   <body>
 
     <div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"></script>
-    <div class="container-fluid px-sm-5">
+    <div class="container-fluid px-sm-5 pr-0">
 
 
       <header class="bg-primary row align-items-center">
@@ -27,7 +27,7 @@
         <div class="itemLine col-sm-5">
           <ul class = "nav">
             <li class ="nav-item"><a href="{% url 'blogApp:home' %}" class = "nav-link text-white">Home</a></li>
-            <li class ="nav-item"><a href="{% url 'blogApp:index' %}" class = "nav-link text-white">webアプリ制作日誌</a></li>
+            <li class ="nav-item"><a href="{% url 'blogApp:index' %}" class = "nav-link text-white">IT制作ブログ</a></li>
             <li class ="nav-item"><a href="#" class = "nav-link text-white">webアプリケーション</a></li>
           </ul>
         </div>
@@ -47,7 +47,7 @@
           </nav>
         </div>
         <div class="maincontent  col-12 col-sm-9 px-0">
-          <p style ="font-size:40px;">オススメ記事一覧</p>
+          <p id="block1" class="header">おすすめ記事</p>
           <div class = "carousel slide" id ="cl" data-ride = "carousel" style ="margin:0 auto;">
             <ol class = "carousel-indicators">
               <li data-target = "#cl" data-slide-to ="0" class = "active"></li>
@@ -89,17 +89,57 @@
           </div>
           <div class="testspace mt-4">
 
-            <home>ホームっぽいやつ</home>
-            <div>
-              ああああああ
+            <div class ="mb-3"><home id="block2" ><h1 class="header mb-2">ようこそ文系エンジニア道ブログへ</h1></home>
+            <date>更新日時：2020.4.14</date>
+            </div>
+            <p>ITド素人の文系サラリーマンがじたばたしながらアプリを作成する様を通して、<br>
+            みんなの頑張る元気を届けるブログです！<br>
+            当ブログはhtmlからサーバーアップロードまですべて自分で行っております。</p>
+
+            <div id="block3" class="mx-auto font-weight-bold" style="width: 650px;"><h1 class="header">2020年度第1四半期ロードマップ</h1></div>
+            <div class="row text-center font-weight-bold">
+              <div class ="col-md p-1">
+                <div class="font-weight-bold" style="background-color:navy; color:white;">4月</div>
+                <div class="bg-info p-1 justify-content-center">
+                  <div class ="col bg-white p-1"><h5 class="font-weight-bold" style="color:navy;">ブログ改修</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【セキュリティ向上】<br>sslの導入<br>認証機能の強化</p>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【モバイルフレンドリー】<br>レスポンシブデザインの導入</p>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【ブログ制作記事】<br>ブログをデプロイするまでの工程</p>
+                  </div>
+                  <div class ="col bg-white pt-3 pb-2"><h5 class="font-weight-bold" style="color:navy;">アプリ制作</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【マッピングアプリ】<br>webスクレイピング</p>
+                  </div>
+                </div>
+              </div>
+              <div class ="col-md p-1">
+                <div class="font-weight-bold" style="background-color:navy; color:white;">5月</div>
+                <div class="bg-info p-1 justify-content-center">
+                  <div class ="col bg-white p-1"><h5 class="font-weight-bold" style="color:navy;">ブログ改修</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【機能追加】<br>ブログ内検索<br>コメント欄</p>
+                  </div>
+                  <div class ="col bg-white pt-3 pb-2"><h5 class="font-weight-bold" style="color:navy;">アプリ制作</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【金融系アプリ】<br>数値解析</p>
+                  </div>
+                </div>
+              </div>
+              <div class ="col-md p-1 mr-4">
+                <div class="font-weight-bold" style="background-color:navy; color:white;">6月</div>
+                <div class="bg-info p-1 justify-content-center">
+                  <div class ="col bg-white p-1"><h5 class="font-weight-bold" style="color:navy;">ブログ改修</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【ブログ仕様変更】<br>docker導入</p>
+                  </div>
+                  <div class ="col bg-white pt-3 pb-2 mr-4"><h5 class="font-weight-bold" style="color:navy;">アプリ制作</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【歴史系アプリ】<br>動的アプリ</p>
+                  </div>
+                </div>
+              </div>
+              </div>
+            <div class="shadow mb-5 news" style="height:200px;">
+            <h2 class="mt-5 header p-1">直近の更新予定について</h2>
+              <p class="p-1">ブログとして最低限の形になるまで改修を進めていきます</p>
             </div>
 
-
-
-
-
-            <iframe id = "block4" src="https://docs.google.com/forms/d/e/1FAIpQLSfmb88QIWfQEuzfghCvNcikXV0Ama4a1ywi_5wfdc6170XSCA/viewform?embedded=true" width="640" height="468" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-            <br>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfmb88QIWfQEuzfghCvNcikXV0Ama4a1ywi_5wfdc6170XSCA/viewform?embedded=true" width="100%" height="468" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
             <br>
             <br>
             <br>
@@ -120,8 +160,8 @@
             </li>
             </ul>
           </div>
-          <div class="sameTag">
-            <p>各カテゴリ毎の初回記事</p>
+          <div id="block4" class="sameTag">
+            <p class="header">各カテゴリ毎の初回記事</p>
             <div class="card-group">
               {% for firstArticle in firstArticleSet %}
                 <div class="card" style="width:80%; background-color:transparent;border:1px solid black;">
@@ -145,20 +185,21 @@
             </div>
 
             <ul  class= "list-unstyled">
-              <li><a href="#block1">目次１</a></li>
-              <li><a href="#block2">目次２</a></li>
-              <li><a href="#block3">目次３</a></li>
-              <li><a href="#block4">目次４</a></li>
+              <li><a href="#block1">おすすめ記事</a></li>
+              <li><a href="#block2">ようこそ文系エンジニア道ブログへ</a></li>
+              <li><a href="#block3">ロードマップ</a></li>
+              <li><a href="#block4">カテゴリ別記事</a></li>
             </ul>
 
           </div>
 
           <div class="rounded bg-primary p-1 pt-3 pt-0">
-            <p class="text-white">自己紹介</p>
+            <p class="text-white">自己紹介：seiya</p>
           </div>
           <p>社会人4年目の文系サラリーマンです</p>
-          <p>フルスタック目指して頑張ってます</p>
-          <p>生暖かく見守っていただければ幸いです <br> ぜひ一緒に頑張りましょう</p>
+          <p>生暖かく見守っていただければ幸いです<br>
+            ぜひ一緒に頑張りましょう<br>
+            <a href="{% url 'blogApp:profile' %}">プロフィールページへ</a></p>
           <div class="rounded bg-primary p-1 pt-3 pt-0">
             <p class="text-white">おすすめ記事</p>
           </div>

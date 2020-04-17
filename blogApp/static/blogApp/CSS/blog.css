@@ -1,3 +1,6 @@
+.header{
+  font-size:40px;
+}
 .iconimg{
   vertical-align:-8px;
   margin-right:10px;
@@ -30,23 +33,52 @@
 }
 
 /* ワイドスクリーン用のCSS */
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 992px) {
 	.cover-img {
 		height: 800px;
+	}
+	.header{
+	font-size: 40px;
+	}
+	.news{
+	width:600px;
 	}
 }
 
 /* タブレット用のCSS */
-@media only screen and (min-width : 768px) and (max-width : 1200px) {
+@media only screen and (max-width : 991px) {
 	.cover-img {
 		height: 500px;
+	}
+	.header{
+	font-size: 30px;
+	}
+	.news{
+	width:500px;
 	}
 }
 
 /* スマホ用のCSS */
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 767px) {
 	.cover-img {
-		height: 300px;
+		height: 50%;
+	}
+	.header{
+	font-size: 20px;
+	}
+	.news{
+	width:350px;
+	}
+}
+@media only screen and (max-width: 576px) {
+	.cover-img {
+		height: 50%;
+	}
+	.header{
+	font-size: 20px;
+	}
+	.news{
+	width:400px;
 	}
 }
 
