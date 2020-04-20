@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post
 from .models import entryModel
 
 def home(request):
@@ -13,9 +12,6 @@ def profile(request):
     firstArticleSet = entryModel.objects.filter(genreNumber=1)
     return render(request, 'blogApp/profile.html', {"linkArticleSet": linkArticleSet, "firstArticleSet": firstArticleSet})
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blogApp/template.html', {"posts": posts})
 
 def index(request):
     allList = entryModel.objects.filter(published_date__isnull=False).order_by("published_date")

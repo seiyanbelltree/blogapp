@@ -13,12 +13,6 @@ class Image(models.Model):
     image = models.ImageField(upload_to='photos')
     path = models.CharField(max_length=200, null=True)
 
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
-
-    def __str__(self):
-        return self.title
 
 class entryModel(models.Model):
     articleNumber = models.AutoField(primary_key=True)
