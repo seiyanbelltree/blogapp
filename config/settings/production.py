@@ -7,10 +7,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'blogdb',
-        'USER': 'seiya',
+        'USER': 'admin',
         'PASSWORD': 'Rhoden5130!',
 #いつかRDSに分けた時用        'HOST': 'blogdb.caa7627qv4ac.ap-northeast-1.rds.amazonaws.com',
-        'HOST': 'localhost',
+        'HOST': 'ip-172-31-45-127.ap-northeast-1.compute.internal',
         'PORT': '3306',
     }
 }
