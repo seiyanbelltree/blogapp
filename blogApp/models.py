@@ -2,21 +2,21 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
-class Genre(models.Model):
+class genre(models.Model):
     id = models.AutoField(primary_key=True)
     genre = models.CharField(max_length=64, blank=False, unique=True)
     def __str__(self):
         return self.genre
 
-class Image(models.Model):
+class image(models.Model):
     id = models.AutoField(primary_key=True)
     image = models.ImageField(upload_to='photos')
     path = models.CharField(max_length=200, null=True)
 
 
-class entryModel(models.Model):
+class entrymodel(models.Model):
     articleNumber = models.AutoField(primary_key=True)
-    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+    genre = models.ForeignKey(genre, on_delete=models.CASCADE)
     recommend = models.IntegerField(null=True, blank=True)
     genreNumber = models.IntegerField(null=False)
     image = models.ImageField(upload_to="media/", null=True)

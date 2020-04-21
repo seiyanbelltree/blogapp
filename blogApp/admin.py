@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import entryModel
-from .models import Genre
-from .models import Image
+from .models import entrymodel
+from .models import genre
+from .models import image
 
-admin.site.register(entryModel)
-admin.site.register(Genre)
-admin.site.register(Image)
+admin.site.register(entrymodel)
+admin.site.register(genre)
+admin.site.register(image)
 
 # Register your models here.
