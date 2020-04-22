@@ -3,7 +3,7 @@ from . import forms
 from . import test
 # Create your views here.
 
-def scrApp(request):
+def scrapp(request):
     form = forms.sandboxForm(request.GET or None)
 
     if form.is_valid():
@@ -23,13 +23,13 @@ def scrApp(request):
         "answer2": answer2,
         "sentence": sentence,
     }
-    return render(request, 'scrApp/template.html', d)
+    return render(request, 'scrapp/template.html', d)
 
 def hello_get_query(request):
     d = {
         'your_name': request.GET.get('your_name')
     }
-    return render(request, 'scrApp/test.html', d)
+    return render(request, 'scrapp/test.html', d)
 
 def sandbox(request):
     form = forms.sandboxForm(request.GET or None)
@@ -51,4 +51,4 @@ def sandbox(request):
         "answer2": answer2,
         "sentence": sentence,
     }
-    return render(request, 'scrApp/sandbox.html', d)
+    return render(request, 'scrapp/sandbox.html', d)

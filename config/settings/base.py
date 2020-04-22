@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blogApp.apps.BlogappConfig',
-    'testApp.apps.TestappConfig',
-    'scrApp.apps.ScrappConfig',
+    'blogapp.apps.BlogappConfig',
+    'testapp.apps.TestappConfig',
+    'scrapp.apps.ScrappConfig',
 
 ]
 

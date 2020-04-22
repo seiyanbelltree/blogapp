@@ -9,10 +9,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'blogApp/CSS/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'blogapp/CSS/blog.css' %}">
 
     <title>文系エンジニア道 {{ Article.title }}</title>
-    <link rel="icon" href="{% static 'blogApp/img/favicon.ico' %}">
+    <link rel="icon" href="{% static 'blogapp/img/favicon.ico' %}">
   </head>
   <body>
     <div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"></script>
@@ -21,12 +21,12 @@
 
       <header class="bg-primary row align-items-center">
         <div class="blogLogo col-sm-4">
-        <h1><a href="{% url 'blogApp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static "blogApp/img/icon.png" %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
+        <h1><a href="{% url 'blogapp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static "blogapp/img/icon.png" %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
         </div>
         <div class="itemLine col-sm-5">
           <ul class = "nav">
-            <li class ="nav-item"><a href="{% url 'blogApp:home' %}" class = "nav-link text-white">Home</a></li>
-            <li class ="nav-item"><a href="{% url 'blogApp:index' %}" class = "nav-link text-white">webアプリ制作日誌</a></li>
+            <li class ="nav-item"><a href="{% url 'blogapp:home' %}" class = "nav-link text-white">Home</a></li>
+            <li class ="nav-item"><a href="{% url 'blogapp:index' %}" class = "nav-link text-white">webアプリ制作日誌</a></li>
             <li class ="nav-item"><a href="#" class = "nav-link text-white">webアプリケーション</a></li>
           </ul>
         </div>
@@ -41,9 +41,9 @@
         <div class="col-12 px-0">
           <nav>
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{% url 'blogApp:home' %}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{% url 'blogApp:index' %}">Blog制作日誌</a></li>
-              <li class="breadcrumb-item"><a href="{% url 'blogApp:indexGenre' genre=Article.genre %}">{{Article.genre}}</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'blogapp:home' %}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'blogapp:index' %}">Blog制作日誌</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'blogapp:indexGenre' genre=Article.genre %}">{{Article.genre}}</a></li>
             </ol>
           </nav>
         </div>
@@ -104,7 +104,7 @@
             <div class="card-group">
               {% for SameGenre in SameGenreSet|slice:":5" %}
                 <div class="card" style="width:80%; background-color:transparent;border:1px solid black;">
-                  <a href="{% url 'blogApp:entries' aN=SameGenre.articleNumber %}">
+                  <a href="{% url 'blogapp:entries' aN=SameGenre.articleNumber %}">
                   <img src="{% static SameGenre.image.url %}" alt="サムネ画像" class="card-img" style = "opacity:0.4";>
                   <div class="card-img-overlay">
                     <h5>{{ SameGenre.title}}</h5>
@@ -144,7 +144,7 @@
           </div>
             {% for linkArticle in linkArticleSet|slice:":3" %}
               <ul class= "list-unstyled">
- 		        <li><a href="{% url 'blogApp:entries' aN=linkArticle.articleNumber %}"><img src="{{ linkArticle.image.url }}" alt="" style="width:25%;">{{ linkArticle.title }}</a></li>
+ 		        <li><a href="{% url 'blogapp:entries' aN=linkArticle.articleNumber %}"><img src="{{ linkArticle.image.url }}" alt="" style="width:25%;">{{ linkArticle.title }}</a></li>
               </ul>
             {% endfor %}
         </div>

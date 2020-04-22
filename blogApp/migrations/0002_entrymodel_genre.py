@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('blogApp', '0001_initial'),
+        ('blogapp', '0001_initial'),
     ]
 
     operations = [
@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='entryModel',
+            name='entrymodel',
             fields=[
                 ('articleNumber', models.AutoField(primary_key=True, serialize=False)),
                 ('recommend', models.IntegerField(null=True)),
@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('created_date', models.DateTimeField(default=django.utils.timezone.now)),
                 ('published_date', models.DateTimeField(blank=True, null=True)),
                 ('author', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
-                ('genre', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blogApp.Genre')),
+                ('genre', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blogapp.genre')),
             ],
             options={
                 'unique_together': {('genre', 'genreNumber')},

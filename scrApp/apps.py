@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ScrappConfig(AppConfig):
-    name = 'scrApp'
+    name = 'scrapp'

@@ -9,10 +9,10 @@
     {% load static %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'blogApp/CSS/blog.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blogapp/CSS/blog.css' %}">
 
     <title>文系エンジニア道</title>
-    <link rel="shortcut icon" href="{% static 'blogApp/img/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'blogapp/img/favicon.ico' %}">
   </head>
   <body>
 
@@ -22,12 +22,12 @@
 
       <header class="bg-primary row align-items-center">
         <div class="blogLogo col-sm-4">
-        <h1><a href="{% url 'blogApp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static 'blogApp/img/icon.png' %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
+        <h1><a href="{% url 'blogapp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static 'blogapp/img/icon.png' %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
         </div>
         <div class="itemLine col-sm-5">
           <ul class = "nav">
-            <li class ="nav-item"><a href="{% url 'blogApp:home' %}" class = "nav-link text-white">Home</a></li>
-            <li class ="nav-item"><a href="{% url 'blogApp:index' %}" class = "nav-link text-white">IT制作ブログ</a></li>
+            <li class ="nav-item"><a href="{% url 'blogapp:home' %}" class = "nav-link text-white">Home</a></li>
+            <li class ="nav-item"><a href="{% url 'blogapp:index' %}" class = "nav-link text-white">IT制作ブログ</a></li>
             <li class ="nav-item"><a href="#" class = "nav-link text-white">webアプリケーション</a></li>
           </ul>
         </div>
@@ -42,7 +42,7 @@
         <div class="col-12 px-0">
           <nav>
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{% url 'blogApp:home' %}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'blogapp:home' %}">Home</a></li>
             </ol>
           </nav>
         </div>
@@ -59,7 +59,7 @@
 
               {% for linkArticle in linkArticleSet|slice:":4" %}
                 {% if forloop.first %}
-                 <div class="carousel-item active"><a href="{% url 'blogApp:entries' aN=linkArticle.articleNumber %}">
+                 <div class="carousel-item active"><a href="{% url 'blogapp:entries' aN=linkArticle.articleNumber %}">
                   <img src="{% static linkArticle.image.url %}" class = "d-block w-100 carouselimg" alt="おすすめ記事{{ forloop.counter }}">
                   <div class="carousel-caption d-none d-sm-block">
                    <p class ="carouselarticle">{{ forloop.counter }} {{ linkArticle.title }}</p>
@@ -67,7 +67,7 @@
                   </a>
                  </div>
                 {% else %}
-                 <div class="carousel-item"><a href="{% url 'blogApp:entries' aN=linkArticle.articleNumber %}">
+                 <div class="carousel-item"><a href="{% url 'blogapp:entries' aN=linkArticle.articleNumber %}">
                   <img src="{% static linkArticle.image.url %}" class = "d-block w-100 carouselimg" alt="おすすめ記事{{ forloop.counter }}">
                   <div class="carousel-caption d-none d-sm-block">
                    <p class ="carouselarticle">{{ forloop.counter }} {{ linkArticle.title }}</p>
@@ -165,7 +165,7 @@
             <div class="card-group">
               {% for firstArticle in firstArticleSet %}
                 <div class="card" style="width:80%; background-color:transparent;border:1px solid black;">
-                  <a href="{% url 'blogApp:entries' aN=firstArticle.articleNumber %}">
+                  <a href="{% url 'blogapp:entries' aN=firstArticle.articleNumber %}">
                   <img src="{% static firstArticle.image.url %}" alt="サムネ画像" class="card-img" style = "opacity:0.4";>
                   <div class="card-img-overlay">
                     <h5>{{ firstArticle.title}}</h5>
@@ -199,13 +199,13 @@
           <p>社会人4年目の文系サラリーマンです</p>
           <p>生暖かく見守っていただければ幸いです<br>
             ぜひ一緒に頑張りましょう<br>
-            <a href="{% url 'blogApp:profile' %}">プロフィールページへ</a></p>
+            <a href="{% url 'blogapp:profile' %}">プロフィールページへ</a></p>
           <div class="rounded bg-primary p-1 pt-3 pt-0">
             <p class="text-white">おすすめ記事</p>
           </div>
             {% for linkArticle in linkArticleSet|slice:":3" %}
               <ul class= "list-unstyled">
- 		        <li><a href="{% url 'blogApp:entries' aN=linkArticle.articleNumber %}"><img src="{% static linkArticle.image.url %}" alt="" style="width:25%;">{{ linkArticle.title }}</a></li>
+ 		        <li><a href="{% url 'blogapp:entries' aN=linkArticle.articleNumber %}"><img src="{% static linkArticle.image.url %}" alt="" style="width:25%;">{{ linkArticle.title }}</a></li>
               </ul>
             {% endfor %}
         </div>

@@ -9,7 +9,7 @@
 
 {% for test in testSet %}
     <div>
-        <p><a href="{% url 'testApp:testArticle' tN=test.testNumber %}">{{ test.testNumber }}番目の記事を読む</a></p>
+        <p><a href="{% url 'testapp:testArticle' tN=test.testNumber %}">{{ test.testNumber }}番目の記事を読む</a></p>
         <h2>{{ test.text|linebreaksbr }}</h2>
     </div>
 {% endfor %}

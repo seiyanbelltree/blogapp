@@ -45,7 +45,8 @@ class entrymodel(models.Model):
         if self.image and hasattr(self.image, "url"):
             return self.image.url
         else:
-            return "/static/blogApp/img/pythonLogo.png"
+            return "/static/bloga" \
+                   "pp/img/pythonLogo.png"
 
     def __str__(self):
         return self.title
