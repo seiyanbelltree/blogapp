@@ -1,0 +1,61 @@
+{% extends 'blogapp/entries.html' %}
+{% load static %}
+
+{% block header %}
+      <header class="bg-primary row align-items-center">
+        <div class="blogLogo col-sm-4">
+        <h1><a href="{% url 'blogapp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static "blogapp/img/icon.png" %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
+        </div>
+        <div class="itemLine col-sm-5">
+          <ul class = "nav">
+            <li class ="nav-item"><a href="{% url 'blogapp:home' %}" class = "nav-link text-white">Home</a></li>
+            <li class ="nav-item"><a href="{% url 'blogapp:index' %}" class = "nav-link text-white">webアプリ制作日誌</a></li>
+            <li class ="nav-item"><a href="#" class = "nav-link text-white">webアプリケーション</a></li>
+          </ul>
+        </div>
+
+        <div class="searchBox col-sm-3 pr-0">
+          <script async src="https://cse.google.com/cse.js?cx=005258229361806061826:vc18lv4846z"></script>
+          <div class="gcse-search"></div>
+        </div>
+
+      </header>
+{% endblock %}
+
+{% block sidebar %}
+<div class="subBar col-12 col-sm-3 sticky-top p-0" style = "height:720px; background-color:lightblue;">
+    <div class="toc pt-0">
+        <div class="rounded bg-primary p-1 pt-3 pt-0">
+            <p class = "text-white">目次</p>
+        </div>
+        <ul  class= "list-unstyled">
+            <li><a href="#block1">{{ Article.h1|default_if_none:""  }}</a></li>
+            <li><a href="#block2">{{ Article.h2|default_if_none:""  }}</a></li>
+            <li><a href="#block3">{{ Article.h3|default_if_none:""  }}</a></li>
+            <li><a href="#block4">{{ Article.h4|default_if_none:""  }}</a></li>
+        </ul>
+    </div>
+    <div class="rounded bg-primary p-1 pt-3 pt-0">
+        <p class="text-white">自己紹介</p>
+    </div>
+    <p>社会人4年目の文系サラリーマンです</p>
+    <p>フルスタック目指して頑張ってます</p>
+    <p>生暖かく見守っていただければ幸いです <br> ぜひ一緒に頑張りましょう</p>
+    <div class="rounded bg-primary p-1 pt-3 pt-0">
+        <p class="text-white">おすすめ記事</p>
+    </div>
+    {% for linkArticle in linkArticleSet|slice:":3" %}
+    <ul class= "list-unstyled">
+ 	    <li><a href="{% url 'blogapp:entries' aN=linkArticle.articleNumber %}"><img src="{{ linkArticle.image.url }}" alt="" style="width:25%;">{{ linkArticle.title }}</a></li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="row bg-dark text-white">
+    <div class="col-12 text-right pt-2">
+        <p class="mr-3">©2019 文系エンジニア道 all rights reserved</p>
+    </div>
+</footer>
+{% endblock %}

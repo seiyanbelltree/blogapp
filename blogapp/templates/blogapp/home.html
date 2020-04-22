@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'blogapp/CSS/blog.css' %}">
+
+    <title>文系エンジニア道</title>
+    <link rel="shortcut icon" href="{% static 'blogapp/img/favicon.ico' %}">
+  </head>
+  <body>
+
+    <div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"></script>
+    <div class="container-fluid px-sm-5 pr-0">
+
+
+      <header class="bg-primary row align-items-center">
+        <div class="blogLogo col-sm-4">
+        <h1><a href="{% url 'blogapp:home' %}"  style="text-decoration:none; color:black;"><img src="{% static 'blogapp/img/icon.png' %}" alt="アイコン画像" class = "iconimg"> 文系エンジニア道</a></h1>
+        </div>
+        <div class="itemLine col-sm-5">
+          <ul class = "nav">
+            <li class ="nav-item"><a href="{% url 'blogapp:home' %}" class = "nav-link text-white">Home</a></li>
+            <li class ="nav-item"><a href="{% url 'blogapp:index' %}" class = "nav-link text-white">IT制作ブログ</a></li>
+            <li class ="nav-item"><a href="#" class = "nav-link text-white">webアプリケーション</a></li>
+          </ul>
+        </div>
+
+        <div class="searchBox col-sm-3 pr-0">
+          <script async src="https://cse.google.com/cse.js?cx=005258229361806061826:vc18lv4846z"></script>
+          <div class="gcse-search"></div>
+        </div>
+
+      </header>
+      <div class="content row">
+        <div class="col-12 px-0">
+          <nav>
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="{% url 'blogapp:home' %}">Home</a></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="maincontent  col-12 col-sm-9 px-0">
+          <p id="block1" class="header">おすすめ記事</p>
+          <div class = "carousel slide" id ="cl" data-ride = "carousel" style ="margin:0 auto;">
+            <ol class = "carousel-indicators">
+              <li data-target = "#cl" data-slide-to ="0" class = "active"></li>
+              <li data-target = "#cl" data-slide-to ="1"></li>
+              <li data-target = "#cl" data-slide-to ="2"></li>
+              <li data-target = "#cl" data-slide-to ="3"></li>
+            </ol>
+            <div class="carousel-inner">
+
+              {% for linkArticle in linkArticleSet|slice:":4" %}
+                {% if forloop.first %}
+                 <div class="carousel-item active"><a href="{% url 'blogapp:entries' aN=linkArticle.articleNumber %}">
+                  <img src="{% static linkArticle.image.url %}" class = "d-block w-100 carouselimg" alt="おすすめ記事{{ forloop.counter }}">
+                  <div class="carousel-caption d-none d-sm-block">
+                   <p class ="carouselarticle">{{ forloop.counter }} {{ linkArticle.title }}</p>
+                  </div>
+                  </a>
+                 </div>
+                {% else %}
+                 <div class="carousel-item"><a href="{% url 'blogapp:entries' aN=linkArticle.articleNumber %}">
+                  <img src="{% static linkArticle.image.url %}" class = "d-block w-100 carouselimg" alt="おすすめ記事{{ forloop.counter }}">
+                  <div class="carousel-caption d-none d-sm-block">
+                   <p class ="carouselarticle">{{ forloop.counter }} {{ linkArticle.title }}</p>
+                  </div>
+                  </a>
+                 </div>
+                {% endif %}
+              {% endfor %}
+              </a>
+            </div>
+            <a href="#cl" class = "carousel-control-prev" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">前の記事</span>
+            </a>
+            <a href="#cl" class = "carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">次の記事</span>
+            </a>
+          </div>
+          <div class="testspace mt-4">
+
+            <div class ="mb-3"><home id="block2" ><h1 class="header mb-2">ようこそ文系エンジニア道ブログへ</h1></home>
+            <date>更新日時：2020.4.14</date>
+            </div>
+            <p>ITド素人の文系サラリーマンがじたばたしながらアプリを作成する様を通して、<br>
+            みんなの頑張る元気を届けるブログです！<br>
+            当ブログはhtmlからサーバーアップロードまですべて自分で行っております。</p>
+
+            <div id="block3" class="mx-auto font-weight-bold" style="width: 650px;"><h1 class="header">2020年度第1四半期ロードマップ</h1></div>
+            <div class="row text-center font-weight-bold">
+              <div class ="col-md p-1">
+                <div class="font-weight-bold" style="background-color:navy; color:white;">4月</div>
+                <div class="bg-info p-1 justify-content-center">
+                  <div class ="col bg-white p-1"><h5 class="font-weight-bold" style="color:navy;">ブログ改修</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【セキュリティ向上】<br>sslの導入<br>認証機能の強化</p>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【モバイルフレンドリー】<br>レスポンシブデザインの導入</p>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【ブログ制作記事】<br>ブログをデプロイするまでの工程</p>
+                  </div>
+                  <div class ="col bg-white pt-3 pb-2"><h5 class="font-weight-bold" style="color:navy;">アプリ制作</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【マッピングアプリ】<br>webスクレイピング</p>
+                  </div>
+                </div>
+              </div>
+              <div class ="col-md p-1">
+                <div class="font-weight-bold" style="background-color:navy; color:white;">5月</div>
+                <div class="bg-info p-1 justify-content-center">
+                  <div class ="col bg-white p-1"><h5 class="font-weight-bold" style="color:navy;">ブログ改修</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【機能追加】<br>ブログ内検索<br>コメント欄</p>
+                  </div>
+                  <div class ="col bg-white pt-3 pb-2"><h5 class="font-weight-bold" style="color:navy;">アプリ制作</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【金融系アプリ】<br>数値解析</p>
+                  </div>
+                </div>
+              </div>
+              <div class ="col-md p-1 mr-4">
+                <div class="font-weight-bold" style="background-color:navy; color:white;">6月</div>
+                <div class="bg-info p-1 justify-content-center">
+                  <div class ="col bg-white p-1"><h5 class="font-weight-bold" style="color:navy;">ブログ改修</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【ブログ仕様変更】<br>docker導入</p>
+                  </div>
+                  <div class ="col bg-white pt-3 pb-2 mr-4"><h5 class="font-weight-bold" style="color:navy;">アプリ制作</h5>
+                  <p class="rounded mb-1" style="background-color:blue; color:white;">【歴史系アプリ】<br>動的アプリ</p>
+                  </div>
+                </div>
+              </div>
+              </div>
+            <div class="shadow mb-5 news" style="height:200px;">
+            <h2 class="mt-5 header p-1">直近の更新予定について</h2>
+              <p class="p-1">ブログとして最低限の形になるまで改修を進めていきます</p>
+            </div>
+
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfmb88QIWfQEuzfghCvNcikXV0Ama4a1ywi_5wfdc6170XSCA/viewform?embedded=true" width="100%" height="468" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+            <br>
+            <br>
+            <br>
+          </div>
+          <div class="sns">
+
+            <ul class="clearfix list-unstyled">
+
+            <li class="twitter">
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="テスト用" data-url="http://startblog.starfree.jp/blogscheme.html" data-lang="ja" data-show-count="false">Tweet</a>
+            </li>
+
+            <li class="facebook">
+            <div class="fb-share-button" data-href="http://startblog.starfree.jp/blogscheme.html" data-layout="button" data-size="large">
+              <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fstartblog.starfree.jp%2Fblogscheme.html&amp;src=sdkpreparse"
+              class="fb-xfbml-parse-ignore">シェア</a>
+            </div>
+            </li>
+            </ul>
+          </div>
+          <div id="block4" class="sameTag">
+            <p class="header">各カテゴリ毎の初回記事</p>
+            <div class="card-group">
+              {% for firstArticle in firstArticleSet %}
+                <div class="card" style="width:80%; background-color:transparent;border:1px solid black;">
+                  <a href="{% url 'blogapp:entries' aN=firstArticle.articleNumber %}">
+                  <img src="{% static firstArticle.image.url %}" alt="サムネ画像" class="card-img" style = "opacity:0.4";>
+                  <div class="card-img-overlay">
+                    <h5>{{ firstArticle.title}}</h5>
+                  </div>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+
+        <div class="subBar col-12 col-sm-3 sticky-top p-0" style = "height:720px; background-color:lightblue;">
+          <div class="toc pt-0">
+            <div class="rounded bg-primary p-1 pt-3 pt-0">
+              <p class = "text-white">目次</p>
+            </div>
+
+            <ul  class= "list-unstyled">
+              <li><a href="#block1">おすすめ記事</a></li>
+              <li><a href="#block2">ようこそ文系エンジニア道ブログへ</a></li>
+              <li><a href="#block3">ロードマップ</a></li>
+              <li><a href="#block4">カテゴリ別記事</a></li>
+            </ul>
+
+          </div>
+
+          <div class="rounded bg-primary p-1 pt-3 pt-0">
+            <p class="text-white">自己紹介：seiya</p>
+          </div>
+          <p>社会人4年目の文系サラリーマンです</p>
+          <p>生暖かく見守っていただければ幸いです<br>
+            ぜひ一緒に頑張りましょう<br>
+            <a href="{% url 'blogapp:profile' %}">プロフィールページへ</a></p>
+          <div class="rounded bg-primary p-1 pt-3 pt-0">
+            <p class="text-white">おすすめ記事</p>
+          </div>
+            {% for linkArticle in linkArticleSet|slice:":3" %}
+              <ul class= "list-unstyled">
+ 		        <li><a href="{% url 'blogapp:entries' aN=linkArticle.articleNumber %}"><img src="{% static linkArticle.image.url %}" alt="" style="width:25%;">{{ linkArticle.title }}</a></li>
+              </ul>
+            {% endfor %}
+        </div>
+      </div>
+
+
+      <footer class="row bg-dark text-white">
+        <div class="col-12 text-right pt-2">
+          <p class="mr-3">©2019 文系エンジニア道 all rights reserved</p>
+
+        </div>
+
+      </footer>
+    </div>
+      <!-- Optional JavaScript -->
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+  </html>
