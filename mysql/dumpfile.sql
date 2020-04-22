@@ -353,7 +353,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,7 +362,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2020-04-05 09:32:13.197909'),(2,'auth','0001_initial','2020-04-05 09:32:14.269733'),(3,'admin','0001_initial','2020-04-05 09:32:14.533467'),(4,'admin','0002_logentry_remove_auto_add','2020-04-05 09:32:14.553466'),(5,'admin','0003_logentry_add_action_flag_choices','2020-04-05 09:32:14.565471'),(6,'contenttypes','0002_remove_content_type_name','2020-04-05 09:32:14.733440'),(7,'auth','0002_alter_permission_name_max_length','2020-04-05 09:32:14.837440'),(8,'auth','0003_alter_user_email_max_length','2020-04-05 09:32:14.917441'),(9,'auth','0004_alter_user_username_opts','2020-04-05 09:32:14.937438'),(10,'auth','0005_alter_user_last_login_null','2020-04-05 09:32:15.021474'),(11,'auth','0006_require_contenttypes_0002','2020-04-05 09:32:15.025439'),(12,'auth','0007_alter_validators_add_error_messages','2020-04-05 09:32:15.041471'),(13,'auth','0008_alter_user_username_max_length','2020-04-05 09:32:15.153472'),(14,'auth','0009_alter_user_last_name_max_length','2020-04-05 09:32:15.269440'),(15,'blogApp','0001_initial','2020-04-05 09:32:15.413472'),(16,'blogApp','0002_entrymodel_genre','2020-04-05 09:32:15.714114'),(17,'blogApp','0003_auto_20191016_1933','2020-04-05 09:32:16.138107'),(18,'blogApp','0004_auto_20191016_2132','2020-04-05 09:32:16.202105'),(19,'blogApp','0005_auto_20191019_0109','2020-04-05 09:32:16.374105'),(20,'blogApp','0006_image_path','2020-04-05 09:32:16.410143'),(21,'blogApp','0007_auto_20191021_1846','2020-04-05 09:32:16.642412'),(22,'blogApp','0008_auto_20191021_1916','2020-04-05 09:32:16.778445'),(23,'blogApp','0009_auto_20191021_1922','2020-04-05 09:32:16.798449'),(24,'sessions','0001_initial','2020-04-05 09:32:16.898444'),(25,'testApp','0001_initial','2020-04-05 09:32:16.962410'),(26,'blogApp','0010_auto_20200420_2201','2020-04-20 13:01:50.839757'),(27,'blogApp','0011_auto_20200421_2315','2020-04-21 14:15:52.919780');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2020-04-05 09:32:13.197909'),(2,'auth','0001_initial','2020-04-05 09:32:14.269733'),(3,'admin','0001_initial','2020-04-05 09:32:14.533467'),(4,'admin','0002_logentry_remove_auto_add','2020-04-05 09:32:14.553466'),(5,'admin','0003_logentry_add_action_flag_choices','2020-04-05 09:32:14.565471'),(6,'contenttypes','0002_remove_content_type_name','2020-04-05 09:32:14.733440'),(7,'auth','0002_alter_permission_name_max_length','2020-04-05 09:32:14.837440'),(8,'auth','0003_alter_user_email_max_length','2020-04-05 09:32:14.917441'),(9,'auth','0004_alter_user_username_opts','2020-04-05 09:32:14.937438'),(10,'auth','0005_alter_user_last_login_null','2020-04-05 09:32:15.021474'),(11,'auth','0006_require_contenttypes_0002','2020-04-05 09:32:15.025439'),(12,'auth','0007_alter_validators_add_error_messages','2020-04-05 09:32:15.041471'),(13,'auth','0008_alter_user_username_max_length','2020-04-05 09:32:15.153472'),(14,'auth','0009_alter_user_last_name_max_length','2020-04-05 09:32:15.269440'),(15,'blogApp','0001_initial','2020-04-05 09:32:15.413472'),(16,'blogApp','0002_entrymodel_genre','2020-04-05 09:32:15.714114'),(17,'blogApp','0003_auto_20191016_1933','2020-04-05 09:32:16.138107'),(18,'blogApp','0004_auto_20191016_2132','2020-04-05 09:32:16.202105'),(19,'blogApp','0005_auto_20191019_0109','2020-04-05 09:32:16.374105'),(20,'blogApp','0006_image_path','2020-04-05 09:32:16.410143'),(21,'blogApp','0007_auto_20191021_1846','2020-04-05 09:32:16.642412'),(22,'blogApp','0008_auto_20191021_1916','2020-04-05 09:32:16.778445'),(23,'blogApp','0009_auto_20191021_1922','2020-04-05 09:32:16.798449'),(24,'sessions','0001_initial','2020-04-05 09:32:16.898444'),(25,'testApp','0001_initial','2020-04-05 09:32:16.962410'),(26,'blogApp','0010_auto_20200420_2201','2020-04-20 13:01:50.839757'),(27,'blogApp','0011_auto_20200421_2315','2020-04-21 14:15:52.919780'),(28,'blogApp','0012_auto_20200421_2349','2020-04-21 14:49:15.567163');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -426,4 +426,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-21 23:18:24
+-- Dump completed on 2020-04-21 23:50:37
