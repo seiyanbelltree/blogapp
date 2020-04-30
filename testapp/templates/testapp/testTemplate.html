@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,13 +7,16 @@
 <body>
 <h1>インデックスだよ</h1>
 
-{% for test in testSet %}
+{% for test in testset %}
     <div>
-        <p><a href="{% url 'testapp:testArticle' tN=test.testNumber %}">{{ test.testNumber }}番目の記事を読む</a></p>
+        <p><a href="{% url 'testapp:testarticle' tN=test.testnumber %}">{{ test.testnumber }}番目の記事を読む</a></p>
         <h2>{{ test.text|linebreaksbr }}</h2>
     </div>
 {% endfor %}
 
+<h2>今日の東京の天気</h2>
+<img src={{ weather_icon }} alt="天気画像">
+<p>{{ result|linebreaksbr  }}</p>
 
 </body>
 </html>
