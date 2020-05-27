@@ -1,0 +1,18 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block content %}
+    <div id="react" class="col-12 col-sm-9 px-0">
+      <h2>今日の東京の天気</h2>
+      <img src={{ weather_icon }} alt="天気画像">
+      <p>{{ result|linebreaksbr  }}</p>
+      <div id="app" class="columns"><!-- React --></div>
+      <br>
+      <div id="app2" class="columns"><!-- React --></div>
+      <br>
+      <div id="app3" class="columns"><!-- React --></div>
+      <br>
+      <div id="app4" class="columns"><!-- React --></div>
+      <br>
+
+    </div>
+{% endblock %}

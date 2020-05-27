@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("blog/", include(("blogapp.urls", "blogapp"),)),
     path("scrape/", include(("scrapp.urls", "scrapp"),)),
+    path("react/", include(("frontend.urls", "frontend"),)),
     path("test/", include(("testapp.urls", "testapp"),)),
     re_path("", RedirectView.as_view(url="/blog/home"), name="redirect_to_home"),
 ]

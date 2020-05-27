@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blogapp.apps.BlogappConfig',
     'testapp.apps.TestappConfig',
     'scrapp.apps.ScrappConfig',
+    'frontend.apps.FrontendConfig',
 
 ]
 
